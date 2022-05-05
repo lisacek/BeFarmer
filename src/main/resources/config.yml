@@ -1,0 +1,130 @@
+plugin:
+  mysql:
+    host: localhost
+    port: 3306
+    username: root
+    password: passwd
+    database: befarmer
+
+npc:
+  lines:
+    - "Harvesting NPC"
+  x: 0
+  y: 0
+  z: 0
+  yaw: 0
+  pitch: 0
+
+tools:
+  carrot-hoe:
+    name: "Carrot Hoe"
+    material: NETHERITE_HOE
+    enchantments:
+      DAMAGE_ALL: 1
+    lore:
+      - "&7&oA tool for harvesting carrots."
+      - "&7&oRight-click a to harvest."
+    nbt:
+      keys:
+        hoeId: "CarrotHoe"
+    rewards:
+      better-reward:
+        levels:
+          1:
+            required: 100000
+            crop: CARROT
+            commands:
+              - "give @a minecraft:carrot 1"
+          2:
+            required: 100000
+            crop: CARROT
+            commands:
+              - "give @a minecraft:carrot 1"
+          max:
+            required: 100000
+            crop: CARROT
+            commands:
+              - "give @a minecraft:carrot 1"
+
+      fortune:
+        max-level: 3
+        recipe:
+          G:
+            material: BOOK
+            amount: 1
+            nbt:
+              enabled: false
+              key: "bookIngredient"
+              value: "G"
+
+          pattern:
+            - "G,G,G"
+            - "G,G,G"
+            - "G,G,G"
+
+
+      replant:
+        quest:
+          type: "harvest"
+          material: CARROT
+          amount: 1
+          autoreplant: true
+
+      radius-upgrade:
+        radius:
+          levels:
+            1: 2
+            2: 3
+            3: 4
+        recipe:
+          G:
+            material: BOOK
+            amount: 1
+            nbt:
+              enabled: false
+              key: "bookIngredient"
+              value: "G"
+
+          pattern:
+            - "G,G,G"
+            - "G,G,G"
+            - "G,G,G"
+
+    recipe:
+      items:
+        W:
+          material: WOODEN_PLANK
+          nbt:
+            enabled: true
+            key: "hoeMat"
+            value: true
+        S:
+          material: STICK
+          nbt:
+            enabled: true
+            key: "hoeMat"
+            value: true
+      pattern:
+        - "x,W,W"
+        - "x,S,x"
+        - "x,S,x"
+
+recipes:
+  carrot-hoe:
+    items:
+      W:
+        material: WOODEN_PLANK
+        nbt:
+          enabled: true
+          key: "hoeMat"
+          value: true
+      S:
+        material: STICK
+        nbt:
+          enabled: true
+          key: "hoeMat"
+          value: true
+    pattern:
+      - "x,W,W"
+      - "x,S,x"
+      - "x,S,x"

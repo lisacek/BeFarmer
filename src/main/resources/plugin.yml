@@ -1,0 +1,8 @@
+name: BeFarmer
+version: '${project.version}'
+main: me.lisacek.befarmer.BeFarmer
+api-version: 1.17
+authors: [ LISACEK ]
+commands:
+  befarmer:
+    description: "Manage your farm"
